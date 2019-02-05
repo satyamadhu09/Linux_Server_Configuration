@@ -266,7 +266,8 @@ and set Redirect URI’s
 
       sudo nano /etc/apache2/sites-available/Project.conf
 
-```<VirtualHost *:80>
+```
+<VirtualHost *:80>
     ServerName 18.233.166.130.xip.io
     ServerAlias ec2-18-233-166-130.compute-1.amazonaws.com
     ServerAdmin ubuntu@54.210.140.47
@@ -383,7 +384,7 @@ The following prompt will be returned:
 
 - After resolving the errors, run the application in the web browser:
 
-      [App](http://18.233.166.130.xip.io)
+      (http://18.233.166.130.xip.io)
       (http://ec2-18-233-166-130.compute-1.amazonaws.com)
 
 - Special thanks to our mentors. Without their help I could not done this project.
