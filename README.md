@@ -6,12 +6,12 @@ This Project mainly explains the installation of a Linux Server and used to host
 
 For setting up this server, below are the steps to be followed:
 
-- The Private Server used here is [Amazon EC2] (https://console.aws.amazon.com/)
-- The web application used to deploy in the server is the [Item Catalog Project] (https://github.com/satyamadhu09/Item-Catalog-02) which was done earlier in the Nano Degree Program.
-- The Database Server used is [PostgreSQL] (https://www.postgresql.org/)
+- The Private Server used here is [Amazon EC2](https://console.aws.amazon.com/)
+- The web application used to deploy in the server is the [Item Catalog Project](https://github.com/satyamadhu09/Item-Catalog-02) which was done earlier in the Nano Degree Program.
+- The Database Server used is [PostgreSQL](https://www.postgresql.org/)
 
 ## Procedure to connect to Amazon EC2:
-- Firstly, open your [AWS Educate] (https://www.awseducate.com/) and login to your account.
+- Firstly, open your [AWS Educate](https://www.awseducate.com/) and login to your account.
 - After logging in, go to your lab which is activated for you and Click on start lab. Now your lab is running, and it should run till the end of your deployment process.
 - Click on Open Console and then go to *All Services*. Select *EC2.*
 - Now Change the server to N. Virginia for creating an instance. 
@@ -23,7 +23,8 @@ For setting up this server, below are the steps to be followed:
 - Click on view Launch log to check whether it is running successfully.
 - Now, click on **launch wizard-2** and Click on Inbound. In this you must add the rules for incoming connections i.e., add port for SSH (2200), HTTP (80) and NTP (123) and save.
 
-To use privatekey [link] (https://github.com/satyamadhu09/Linux_Server_Configuration/blob/master/Private%20Key)
+To use privatekey [link](https://github.com/satyamadhu09/Linux_Server_Configuration/blob/master/Private%20Key).
+
 Public IP address is: 18.233.166.130
 
 ## Steps for Configuring Linux Server:
@@ -69,7 +70,7 @@ To check status:
 
      sudo ufw status
 
-Status: active
+```Status: active
 
 To                         Action      From
 --                         ------      ----
@@ -81,6 +82,7 @@ To                         Action      From
 80/tcp (v6)                ALLOW       Anywhere (v6)             
 123/udp (v6)               ALLOW       Anywhere (v6)             
 22 (v6)                    DENY        Anywhere (v6)
+```
 
 After Completing the above steps, now you need to create a User.
 
@@ -242,7 +244,7 @@ Create User Catalog :
 
 ## Creating Google Oauth Credentials:
 
-- Go to your Project page in the [Google APIs Console] (http://console.developers.google.com)
+- Go to your Project page in the [Google APIs Console](http://console.developers.google.com)
 - Choose credentials from the menu on the left and Create an OAuth CLIENT_ID
 - Before applying some changes, it prompts to configure the Consent Screen. After configuring, now choose Web Application from the list and give a Application name.
 - Set the Authorized JavaScript Origins as the following:
@@ -264,7 +266,7 @@ and set Redirect URI’s
 
       sudo nano /etc/apache2/sites-available/Project.conf
 
-*<VirtualHost *:80>
+```<VirtualHost *:80>
     ServerName 18.233.166.130.xip.io
     ServerAlias ec2-18-233-166-130.compute-1.amazonaws.com
     ServerAdmin ubuntu@54.210.140.47
@@ -283,7 +285,8 @@ and set Redirect URI’s
     ErrorLog ${APACHE_LOG_DIR}/error.log
     LogLevel warn
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>*
+</VirtualHost>
+```
 
 - Now, Enable the virtual host by using the command:
   	 
@@ -353,7 +356,7 @@ The following prompt will be returned:
    
           sudo vi python __init__.py
           
- At database import statement, add:
+``` At database import statement, add:
         from catalog.database import *
 
 - Replace xrange() with range()
@@ -362,8 +365,9 @@ The following prompt will be returned:
 
 - Now save the file and again reload apache.
 - Now run database file, sample items file.
+```
 
-   		 python database_setup.py
+         python database_setup.py
     	 python lotsofmenus.py
        
 - Again reload and restart the apache
@@ -379,11 +383,11 @@ The following prompt will be returned:
 
 - After resolving the errors, run the application in the web browser:
 
-      (http://18.233.166.130.xip.io)
+      [App](http://18.233.166.130.xip.io)
       (http://ec2-18-233-166-130.compute-1.amazonaws.com)
 
-Special thanks to our mentors. Without their help I could not done this project.
-References from Online resources:
+- Special thanks to our mentors. Without their help I could not done this project.
+- References from Online resources:
 Udacity, Stack Overflow, YouTube.
 
 
