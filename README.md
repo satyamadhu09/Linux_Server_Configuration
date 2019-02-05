@@ -386,12 +386,12 @@ At database import statement, add:
 
 - After resolving the errors, run the application in the web browser:
 
-      (http://18.233.166.130.xip.io)
-      (http://ec2-18-233-166-130.compute-1.amazonaws.com)
+        http://18.233.166.130.xip.io
+        http://ec2-18-233-166-130.compute-1.amazonaws.com
 
 - Special thanks to our mentors. Without their help I could not done this project.
 - References from Online resources:
-Udacity, Stack Overflow, YouTube.
+               Udacity, Stack Overflow, YouTube.
 
 
 
