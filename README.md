@@ -357,16 +357,18 @@ The following prompt will be returned:
    
           sudo vi python __init__.py
           
-``` At database import statement, add:
-        from catalog.database import *
+At database import statement, add:
+```
+  from catalog.database import *
 
-- Replace xrange() with range()
+ Replace xrange() with range()
 
-- At specification of client_secrets.json, replace with /var/www/catalog/catalog/client_secrets.json
+ At specification of client_secrets.json, replace with /var/www/catalog/catalog/client_secrets.json
+ ```
 
 - Now save the file and again reload apache.
-- Now run database file, sample items file.
-```
+- Run database file, sample items file.
+
 
          python database_setup.py
     	 python lotsofmenus.py
